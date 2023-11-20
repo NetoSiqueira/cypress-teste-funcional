@@ -8,7 +8,8 @@ const locators = {
     
     MENU:{
         SETTINGS: '[data-test=menu-settings]',
-        CONTAS: '[href="/contas"]'
+        CONTAS: '[href="/contas"]',
+        RESET: '[href="/reset"]'
     },
     CONTA:{
         NOME: '[data-test=nome]',
