@@ -45,6 +45,6 @@ Cypress.Commands.add('login', (user, passwd) =>{
 
 Cypress.Commands.add('resetApp', () =>{
     cy.get(loc.MENU.SETTINGS).click()
-    cy.get(loc.MENU.RESET).click
+    cy.get(loc.MENU.RESET).click()
 })
 
