@@ -11,12 +11,13 @@ const locators = {
         SETTINGS: '[data-test=menu-settings]',
         CONTAS: '[href="/contas"]',
         RESET: '[href="/reset"]',
-        MOVIMENTACAO: '[data-test=menu-movimentacao]'
+        MOVIMENTACAO: '[data-test=menu-movimentacao]',
+        EXTRATO: '[data-test=menu-extrato]'
     },
     CONTA:{
         NOME: '[data-test=nome]',
         BTN_SALVAR_CONTA: '.btn',
-        BTN_ALTERAR: "//table//td[contains(., 'Conta de teste')]/..//i[@class='far fa-edit']"
+        FN_XP_BTN_ALTERAR: nome => `//table//td[contains(., '${nome}')]/..//i[@class='far fa-edit']`
     },
     MESSAGE: '.toast-message',
     MOVIMENTO:{
@@ -29,6 +30,9 @@ const locators = {
     },
     SALDO:{
         FN_XP_SALDO_CONTA: nome =>`//td[contains(., '${nome}')]/../td[2]`
+    },
+    EXTRATO:{
+        FN_XP_REMOVER_ELEMENTO: conta=> `//span[contains(., '${conta}')]/../../..//i[@class='far fa-trash-alt']`
     }
 
 

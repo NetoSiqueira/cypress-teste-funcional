@@ -25,7 +25,7 @@ describe('Should test at a funcional level', () =>{
        // const dataHoraUtc = new Date(dataHoraBrasil.getTime() + (dataHoraBrasil.getTimezoneOffset() * 60000));
 
         cy.acessarMenuConta()
-        cy.xpath(loc.CONTA.BTN_ALTERAR).click()
+        cy.xpath(loc.CONTA.FN_XP_BTN_ALTERAR('Conta de teste')).click()
         cy.get(loc.CONTA.NOME).clear()
         .type('Conta alterada')
         cy.get(loc.CONTA.BTN_SALVAR_CONTA).click()
@@ -57,5 +57,11 @@ describe('Should test at a funcional level', () =>{
         cy.get(loc.MENU.HOME).click()
         cy.xpath(loc.SALDO.FN_XP_SALDO_CONTA('Conta alterada')).should('contain', '123,00')
         
+    });
+
+    it('Should remove a transaction', () => {
+        cy.get(loc.MENU.EXTRATO).click()
+        cy.xpath(loc.EXTRATO.FN_XP_REMOVER_ELEMENTO('Desc')).click()
+        cy.get(loc.MESSAGE).should('contain', 'sucesso')
     });
 })
